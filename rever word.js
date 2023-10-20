@@ -2,22 +2,24 @@
 //Example - This is a sunny day > shiT si a ynnus yad;
 
 function reverseWordsInSentence(sentence) {
+ 
+  var words = sentence.split(' ');
+  
+  for (var i = 0; i < words.length; i++) {
+    var word = words[i];
+    var reversedWord = '';
     
-    const words = sentence.split(' ');
+      for (var j = word.length - 1; j >= 0; j--) {
+      reversedWord += word[j];
+    }
     
-    const reversedWords = words.map(word => reverseWord(word));
-    
-    const reversedSentence = reversedWords.join(' ');
-    
-    return reversedSentence;
+    reversedWords.push(reversedWord);
+  }
+  var reversedSentence = reversedWords.join(' ');
+  
+  return reversedSentence;
 }
 
-function reverseWord(word) {
-    // Convert the word into an array of characters, reverse it, and then join it back
-    return word.split('').reverse().join('');
-}
-
-// Example usage
-const inputSentence = "This is a sunny day";
-const reversedSentence = reverseWordsInSentence(inputSentence);
+var inputSentence = "This is a sunny day";
+var reversedSentence = reverseWordsInSentence(inputSentence);
 console.log(reversedSentence); 
