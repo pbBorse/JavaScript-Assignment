@@ -4,6 +4,8 @@
 function reverseWordsInSentence(sentence) {
  
   var words = sentence.split(' ');
+
+ var reversdWords = [];
   
   for (var i = 0; i < words.length; i++) {
     var word = words[i];
